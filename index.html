@@ -168,7 +168,7 @@ function renderMeta(){
   const n = D.boards.reduce((a,b)=>a+(b.nRecent||0),0);
   const f = D.boards.reduce((a,b)=>a+(b.nFresh||0),0);
   document.getElementById('meta').innerHTML =
-    `交易日 ${t}<br>近期命中 ${n} · 近5日 ${f}`;
+    `交易日 ${t}<br>近期命中 ${n} · 近${D.thresholds.fresh}日 ${f}`;
   document.getElementById('foot').textContent =
     `生成于 ${D.generatedAt||'—'} · ${D.source||''}`;
 }
